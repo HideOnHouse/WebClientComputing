@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function check() {
+            let score = 0;
+            let problems = document.getElementsByClassName("problem");
+            let userAnswers = document.getElementsByClassName("userAnswer");
+            for (let i = 0; i < problems.length; i++) {
+                let question = problems[i].innerHTML;
+                let answer = Math.floor(eval(question));
+                let userAnswer = userAnswers[i].value;
+                if (parseInt(userAnswer) === answer) {
+                    score += 1;
+                    problems[i].style.textDecoration = "none";
+                } else if (userAnswer === "") {
+                    problems[i].style.textDecoration = "line-through";
+                } else {
+                    problems[i].style.textDecoration = "line-through";
+                }
+            }
+            document.getElementById("score").innerHTML = "Score : " + score;
+        }
+
+        function generator() {
+            let questions = document.getElementsByClassName("problem");
+            let userAnswers = document.getElementsByClassName("userAnswer");
+            let operator = ["+", "-", "*", "/"]
+            document.getElementById("remainTime").innerText = 10;
+            document.getElementById("score").innerText = "";
+            for (i = 0; i < questions.length; i++) {
+                let number1 = Math.floor(Math.random() * 10);
+                let number2 = Math.floor(Math.random() * 10);
+                let op = operator[Math.floor(Math.random() * 4)];
+                questions[i].innerHTML = number1 + op + number2;
+                questions[i].style.textDecoration = "none";
+                userAnswers[i].value = "";
+            }
+        }
+
+        function timer() {
+            let remainTime = window.setInterval("time()", 1000);
+            window.setTimeout("check();", 10000);
+        }
+
+        function time() {
+            let remainTime = document.getElementById("remainTime");
+            remainTime.innerText = remainTime.innerText - 1;
+            if (remainTime.innerText <= "0") {
+                remainTime.innerText = 0;
+            }
+        }
+
+    </script>
+</head>
+<body>
+<h3>산수 문제를 풀어 봅시다.</h3>
+문제는 시작 버튼을 누르면 자동으로 생성되며, 10초가 지나면 자동 채점됩니다.
+<br>
+남은시간 : <span id="remainTime">10</span>
+<br>
+<hr>
+<form>
+    <span class="problem">Problem will be shown here</span>
+    <input class="userAnswer" type="text" size="8"><br>
+    <span class="problem">Problem will be shown here</span>
+    <input class="userAnswer" type="text" size="8"><br>
+    <span class="problem">Problem will be shown here</span>
+    <input class="userAnswer" type="text" size="8"><br>
+    <span class="problem">Problem will be shown here</span>
+    <input class="userAnswer" type="text" size="8"><br>
+    <span id="score">Score : 0</span><br>
+    <button type="button" onclick="generator(); timer();">Start</button>
+    <button type="button" onclick="generator(); timer();">Retry</button>
+</form>
+</body>
+</html>

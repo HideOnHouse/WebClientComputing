@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Target of Event Object</title>
+    <script>
+        window.onmouseover = function (ev) {
+            if (ev.target.tagName === "SPAN") {
+                ev.target.style.textDecoration = "underline";
+            }
+        };
+
+        window.onmouseout = function (ev) {
+            if (ev.target.tagName === "SPAN") {
+                ev.target.style.textDecoration = "none";
+            }
+        };
+    </script>
+</head>
+<body>
+<h3>onmouseover / onmouseout only for span tag</h3>
+<hr>
+<p>
+    Write <span>Javascript</span> that draw underline if <span>mouse</span> is on and return if <span>mouse</span>
+    is out only for span tag.
+</p>
+</body>
+</html>

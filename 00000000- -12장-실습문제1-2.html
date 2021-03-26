@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function search() {
+            let name = document.getElementById("name").value;
+            let serial = sessionStorage.getItem(name);
+            let temp = document.createElement("div");
+            if (serial == null) {
+                document.getElementById("serial").value = "해당하는 학생이 없습니다"
+            } else {
+                document.getElementById("serial").value = serial;
+            }
+
+        }
+    </script>
+</head>
+<body>
+<h3>이름과 학번 입력</h3>
+<hr>
+<table>
+    <tr>
+        <td><label for="name">검색할 이름: </label><input type="text" id="name"></td>
+    </tr>
+    <tr>
+        <td><label for="serial">검색된 학번: </label><input type="text" id="serial"></td>
+        <td><input type="button" onclick="search()" value="스토리지에서 검색"></td>
+    </tr>
+</table>
+<a href="20171721-*-12장-실습문제1.html">이름과 학번 저장 페이지로</a>
+</body>
+</html>

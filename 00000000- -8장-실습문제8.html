@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform:rotate()</title>
+    <script>
+        let mag = 2;
+
+        function scratch(image) {
+            image.style.transform = "scale(" + mag + ", 1)";
+            mag += 1;
+        }
+    </script>
+</head>
+<body style="text-align: center">
+<h3>getting this sponge fatter each time you click.</h3>
+<hr>
+<img src="spongebob.png" alt="" onclick="scratch(this)">
+</body>
+</html>

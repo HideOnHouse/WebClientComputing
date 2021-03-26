@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function clickBigger(tag) {
+            let list = document.getElementsByTagName("LI");
+            for (const listElement of list) {
+                listElement.style.fontSize = "1em";
+            }
+            tag.style.fontSize = "1.3em"
+        }
+    </script>
+</head>
+<body>
+<h3>Your click makes list 1.3 times bigger</h3>
+<hr>
+<p>Summer Vacation Wish List</p>
+<ul>
+    <li onclick="clickBigger(this)">Trip around Korea</li>
+    <li onclick="clickBigger(this)">Read 100 book</li>
+    <li onclick="clickBigger(this)">Prepare triathlon</li>
+    <li onclick="clickBigger(this)">Defeat Javascript</li>
+</ul>
+</body>
+</html>

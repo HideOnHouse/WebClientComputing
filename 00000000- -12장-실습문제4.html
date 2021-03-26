@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function store() {
+            let d = new Date();
+            let title = d.getFullYear() + "." + d.getMonth() + "." + d.getDay()
+            let content = document.getElementById("content").value;
+            localStorage.setItem(title, content);
+        }
+
+        function show() {
+            let win = window.open("20171721-*-12장-실습문제4-2.html", "show");
+        }
+
+        function today() {
+            let today = new Date();
+            document.getElementById("today").innerText = "오늘 " + today.getUTCFullYear() + "." + today.getMonth() + "." + today.getDay();
+        }
+    </script>
+</head>
+<body onload="today()">
+<h3>일기쓰기</h3>
+<hr>
+<div id="today"></div>
+<textarea id="content" cols="30" rows="10"></textarea>
+<br>
+<input type="button" value="저장" onclick="store()">
+<input type="button" value="보기" onclick="show()">
+</body>
+</html>

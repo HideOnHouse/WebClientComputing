@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>리스트로 메뉴 만들기</title>
+  <style media="screen">
+    #menubar {
+      background: olive;
+      width: 200px;
+    }
+
+    #menubar ui {
+      margin: 0;
+      padding: 0;
+    }
+
+    #menubar ul li {
+      color: white;
+      display: block;
+      list-style-type: none;
+      padding: 0px 15px;
+    }
+
+    #menubar ul li:hover {
+      color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="menubar">
+    <!-- 언제 class를 쓰고 언제 id를 쓸까? -->
+    <ul>
+      <li>Home</li>
+      <li>Espresso</li>
+      <li>Cappuccino</li>
+      <li>Cafe Latte</li>
+      <li>F.A.Q</li>
+    </ul>
+  </nav>
+</body>
+
+</html>

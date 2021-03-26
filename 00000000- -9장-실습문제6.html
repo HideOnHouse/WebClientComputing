@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onwheel</title>
+</head>
+<script>
+    function resize(ev, tag) {
+        if (ev.wheelDelta > 0) {
+            if (tag.width > 10 && tag.height > 10) {
+                tag.width -= 10;
+                tag.height -= 10;
+            }
+        } else if (ev.wheelDelta < 0) {
+            tag.width += 10;
+            tag.height += 10;
+        }
+    }
+</script>
+<body>
+<h3>Image expand, shrink via mousewheel</h3>
+<hr>
+mouse wheel up will shrink image else expand.
+<br>
+<img src="apple.jpg" alt="no image" onwheel="resize(event, this)" width="237" height="213">
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>컴퓨터 기술 소개</title>
+    <style type="text/css">
+      header{}
+      nav{}
+      section{}
+      article{}
+    </style>
+  </head>
+  <body>
+    <audio id="audio"autoplay loop>
+      <source src="audio.mp3" type="audio/mpeg">
+      브라우저가 오디오를 지원하지 않습니다.
+    </audio>
+    <header>
+      <h2>블록체인</h2>
+      분산 컴퓨팅 기술 기반의 데이터 위변조 방지 기술로, P2P방식을 기반으로 하여 소규모 데이터들이
+      체인 형태로 연결되어 형성된 '블록'이라는 분산 데이터 저장 환경에 관리 대상 데이터를 저장
+      함으로써 누구도 임의로 수정할 수 없고 누구나 변경의 결과를 열람할 수 있게끔 만드는 기술
+    </header>
+    <nav>
+      <h3>목차</h3>
+      <ul>
+        <li><a href="#public">퍼블릭 블록체인</a></li>
+        <li><a href="#private">프라이빗 블록체인</a></li>
+        <li><a href="#use">이용</a></li>
+        <li><a href="#week">약점</a></li>
+      </ul>
+    </nav>
+    <section>
+      <article>
+        <h2 id="public">퍼블릭 블록체인</h2>
+        모든 사용자(노드)가 참가할 수 있는 블록체인 네트워크이다. 네트워크상의 모든 것이
+        전부 투명하게 공개된다.
+      </article>
+      <article class="">
+        <h2 id="private">프라이빗 블록체인</h2>
+        허가된 사용자(노드)만 참가할 수 있는 블록체인 네트워크이다. 모든 거래 이력이 전부
+        투명하게 공개되어서는 곤란하기 때문에 금융권 등지를 중심으로 도입되고 있다.<br><br>
+        <strong>특징</strong>
+        <ul>
+          <li>암호화폐에 의존하지 않는다</li>
+          <li>처리 속도가 비교적 빠르다</li>
+        </ul>
+      </article>
+      <article class="">
+        <h2 id="use">이용</h2>
+        <ul>
+          <li>금융기관</li>
+          <li>산업특화</li>
+          <li>공공조직</li>
+          <li>민간기업</li>
+
+        </ul>
+      </article>
+      <article class="">
+        <h2 id="week">약점</h2>
+        <ol>
+          <li><details open>
+            <summary>51% 어택</summary>
+            <p>과반수의 노드가 동시에 블록체인 거래내역을 조작할 수 있다.</p>
+          </details></li>
+          <li><details open>
+            <summary>더블 스펜딩</summary>
+            <p>동일한 암호화폐로 두 번 이상 지출한다. 실제 암호화폐가 복사되어 지불되는 것이 아닌
+            충동되는 트랙잭션이 있으면 더 많은 노드가 받아들인 트랜잭션ㅇ르 받아들이고 받아들여지지
+          않은 다른 트랜잭션은 취소하는 블록체인의 특징을 이용한 행위이다.</p>
+          </details></li>
+        </ol>
+      </article>
+      <h2>위키 링크</h2>
+      <figure>
+      <figcaption>블록체인의 시각화</figcaption>
+      <a href="https://ko.wikipedia.org/wiki/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8"><img src="blockchain.png" alt="blockchain" width="540"></a>
+      </figure>
+    </section>
+  </body>
+</html>

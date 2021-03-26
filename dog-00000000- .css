@@ -1,0 +1,49 @@
+body {
+    background-color: green;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    display: inline;
+}
+
+#gameOver {
+    position: absolute;
+    display: none;
+    left: 30%;
+    top: 30%;
+    font-size: 120px;
+    color: crimson;
+    font-weight: bolder;
+}
+
+#scoreboard td {
+    background-color: chartreuse;
+    color: black;
+    font-weight: bolder;
+    font-size: 25px;
+    width: 170px;
+}
+
+#scoreboard input {
+    background-color: chartreuse;
+    border: 0;
+    outline: 0;
+    font-weight: bolder;
+    font-size: 25px;
+    color: black;
+}
+
+#game td {
+    background-color: #CEFF84;
+    background-image: url("media/img1.gif");
+    background-repeat: no-repeat;
+    background-size: inherit;
+    background-position: center;
+    width: 73px;
+    height: 105px;
+}

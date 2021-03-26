@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice Mouse Click</title>
+    <script>
+        let currentLocation = 0;
+
+        function changeLocation() {
+            let origin = document.getElementById(currentLocation);
+            origin.innerHTML = "";
+            currentLocation = Math.floor(Math.random() * 100);
+            let destination = document.getElementById(currentLocation);
+            destination.innerHTML = "<img src='bonobono.jpg' alt='' width='50' height='50' onclick='changeLocation()'>";
+        }
+    </script>
+    <style>
+        table, tr, td {
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+    </style>
+<body>
+<h3>Practice Mouse Click</h3>
+<hr>
+<table id="randomTable">
+    <script>
+        let table = document.getElementById("randomTable");
+        for (let i = 0; i < 10; i++) {
+            let tableRow = document.createElement("tr");
+            table.appendChild(tableRow);
+            for (let j = 0; j < 10; j++) {
+                let tableData = document.createElement("td");
+                tableData.id = (i * 10) + j;
+                tableData.width = 50;
+                tableData.height = 50;
+                tableRow.appendChild(tableData);
+            }
+        }
+        let initTable = document.getElementById("0");
+        initTable.innerHTML = "<img src='bonobono.jpg' alt='' width='50' height='50' onclick='changeLocation()'>"
+    </script>
+</table>
+</body>
+</html>

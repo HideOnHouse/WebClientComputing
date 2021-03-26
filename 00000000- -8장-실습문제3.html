@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>visibility property</title>
+    <style>
+        span {
+            visibility: hidden;
+            color: #9b6de9;
+        }
+    </style>
+    <script>
+        let showFlag = false;
+
+        function showAndHide() {
+            let spanElement = document.getElementsByTagName("span");
+            for (let i = 0; i < spanElement.length; i++) {
+                let currentElement = spanElement[i];
+                if (showFlag) {
+                    currentElement.style.visibility = "hidden";
+                } else {
+                    currentElement.style.visibility = "visible";
+                }
+
+            }
+            showFlag = !showFlag;
+        }
+    </script>
+</head>
+<body>
+<h3>Guess the word in blank!
+    <button onclick="showAndHide()">show/hide</button>
+</h3>
+<hr>
+<ul>
+    <li>I (<span>love</span>) you</li>
+    <li>CSS is Cascading (<span>Style</span>) Sheet.</li>
+    <li>Reply (<span>1998</span>).</li>
+</ul>
+</body>
+</html>

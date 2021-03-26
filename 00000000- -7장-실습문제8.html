@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>16개 랜덤 색</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 150px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<h3>16개의 랜덤한 색 만들기</h3>
+<hr>
+<script>
+    for (let i = 0; i < 16; i++) {
+        let str = "<div style='background-color:";
+        let color = "#" + Math.round(Math.random() * 0xffffff).toString(16);
+        str += color;
+        str += "'>" + color + "</div>"
+        document.write(str);
+    }
+</script>
+</body>
+</html>

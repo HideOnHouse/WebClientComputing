@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function search() {
+            let name = document.getElementById("item").value;
+            let serial = sessionStorage.getItem(name);
+            if (serial == null) {
+                document.getElementById("count").value = "해당하는 아이템이 없습니다"
+            } else {
+                document.getElementById("count").value = serial;
+            }
+
+        }
+    </script>
+</head>
+<body>
+<h3>세션 스토리지에서 구입 리스트 검색</h3>
+<hr>
+<table>
+    <tr>
+        <td><label>품목명:
+            <input type="text" id="item">
+        </label></td>
+        <td>
+            <label>개수:
+                <input type="text" id="count">
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="button" value="검색" onclick="search()"></td>
+    </tr>
+</table>
+</body>
+</html>

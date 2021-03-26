@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            display: inline-block;
+            border: #00b903 solid 2px;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        function store(key, val) {
+            let value = val.options[val.selectedIndex].value;
+            localStorage.setItem(key, value);
+        }
+    </script>
+</head>
+<body>
+<h3>여행 갑시다</h3>
+<hr>
+<div>
+    <label for="city">도시를 선택하세요.<br></label><select name="" id="city" onchange="store('city', this)">
+        <option value="파리">파리</option>
+        <option value="뉴욕">뉴욕</option>
+        <option value="런던">런던</option>
+    </select>
+</div>
+<div>
+    <label for="food">음식을 선택하세요.<br></label><select name="" id="food" onchange="store('food', this)">
+    <option value="햄버거">햄버거</option>
+    <option value="에스프레소">에스프레소</option>
+    <option value="치즈 케익">치즈 케익</option>
+    </select>
+</div>
+</body>
+</html>

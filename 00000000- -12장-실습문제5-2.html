@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            display: block;
+            border: #00b903 solid 2px;
+            text-align: left;
+            padding: 5px;
+            width: 50%;
+            height: 50%;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("storage", storageEventListener)
+
+        function storageEventListener(ev) {
+            let temp = document.getElementById("div");
+            let city = "123";
+            let food = "123";
+            for (let i = 0; i < localStorage.length; i++) {
+                if (localStorage.key(i) === "city") {
+                    city = localStorage.getItem(localStorage.key(i));
+                } else {
+                    food = localStorage.getItem(localStorage.key(i));
+                }
+            }
+            temp.innerHTML = "city = " + city + "<br>" + "food = " + food;
+        }
+    </script>
+</head>
+<body>
+<h3>선택한 도시와 음식 보여주기</h3>
+<hr>
+<div id="div">
+
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice JavaScript</title>
+    <script>
+        function change() {
+            let victimSpan = document.getElementById("mySpan");
+            victimSpan.style.border = "2px dotted violet";
+        }
+
+        function countP() {
+            alert(document.getElementsByTagName("p").length);
+        }
+    </script>
+</head>
+<body>
+<h3>What is JavaScript?
+    <button onclick="change()">border</button>
+    <button onclick="countP()">p</button>
+</h3>
+<hr>
+<p>JavaScript is language of Web programming that change web page dynamically.</p>
+<p>User who knows<span id="mySpan">C Language</span>can learn fast.</p>
+<p>Events and GUI Programming can make studying little hard.</p>
+</body>
+</html>

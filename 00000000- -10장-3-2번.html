@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Site select via option</title>
+    <script>
+        function f() {
+            let options = document.getElementsByTagName("option");
+            for (const option of options) {
+                if (option.selected === true) {
+                    window.open(option.value, "overwrite");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<h3>Site select via option</h3>
+Each option will redirect you to there.
+<hr>
+Site List
+<select name="site" id="siteSelect" onchange="f()">
+    <option value="">Site List</option>
+    <option value="https://www.naver.com">Naver</option>
+    <option value="https://www.google.com">Google</option>
+    <option value="https://www.oracle.com">Oracle</option>
+</select>
+</body>
+</html>

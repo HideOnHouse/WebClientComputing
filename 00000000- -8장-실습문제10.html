@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom Object Dynamic Append</title>
+    <script>
+        function addAnswer(tag, text) {
+            let parent = tag.parentElement;
+            let answer = document.createElement("div");
+            answer.innerText = text;
+            answer.addEventListener("click", function () {
+                parent.removeChild(this);
+            });
+            parent.appendChild(answer);
+        }
+    </script>
+</head>
+<body>
+<h3>Insert Answer Dynamically</h3>
+<hr>
+<div>
+    <p>
+        Q. Oh magic mirror, who is the best beautiful is this world?
+    </p>
+    <button onclick="addAnswer(this, 'Snow White')">See Answer</button>
+</div>
+<div>
+    <p>
+        To be or not to be, that is the question.
+    </p>
+    <button onclick="addAnswer(this, 'Both')">See Answer</button>
+</div>
+</body>
+</html>

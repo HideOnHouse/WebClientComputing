@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gambling Game</title>
+    <style>
+        div {
+            border: #9b6de9;
+            background-color: white;
+            color: aquamarine;
+            font-size: 100px;
+            display: inline-block;
+        }
+
+        span {
+            color: black;
+        }
+    </style>
+    <script>
+        let count = 0;
+        let gameOn = true;
+        function check() {
+            count += 1;
+            let firstNumber = document.getElementById("first").innerHTML;
+            let secondNumber = document.getElementById("second").innerHTML;
+            let lastNumber = document.getElementById("last").innerHTML;
+            let result = document.getElementById("board");
+            if (firstNumber === secondNumber && secondNumber === lastNumber && count === 3) {
+                result.innerHTML = "Success! (click here to do again)";
+                result.style.color = "#00b903"
+                gameOn = false;
+            }
+            else if (count === 3) {
+                result.innerHTML = "Fail... (click here to do again)";
+                result.style.color = "red";
+                gameOn = false;
+            }
+        }
+
+        function randomNumber(tag) {
+            if (gameOn === false) {
+                return;
+            }
+            tag.innerHTML = Math.floor(Math.random() * 3).toString();
+            check();
+        }
+
+        function reset() {
+            let result = document.getElementById("board");
+            result.style.color = "#00b903";
+            result.innerHTML = "";
+            count = 0;
+            gameOn = true;
+            document.getElementById("first").innerHTML = "0";
+            document.getElementById("second").innerHTML = "0";
+            document.getElementById("last").innerHTML = "0";
+
+        }
+    </script>
+</head>
+<body>
+<h2>Gambling Game</h2>
+<h4>Click each number to generate number between 0 and 2. Make all number same to get achieve!</h4>
+<hr>
+<div onclick="randomNumber(this)" id="first">0</div>
+<div onclick="randomNumber(this)" id="second">0</div>
+<div onclick="randomNumber(this)" id="last">0</div>
+<br>
+<span id="board" onclick="reset()"> </span>
+</body>
+</html>

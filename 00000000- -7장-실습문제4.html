@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>방문 요일</title>
+</head>
+<body>
+<h3>일요일은 pink, 다른 요일은 gold 배경</h3>
+<hr>
+<script>
+    let week = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+    let current = new Date();
+    if (current.getDay() === 0) {
+        document.body.style.background = "pink";
+    } else {
+        document.body.style.background = "gold";
+    }
+    document.write("오늘 : " + current.getDate() + "일, " + week[current.getDay()]);
+</script>
+</body>
+</html>

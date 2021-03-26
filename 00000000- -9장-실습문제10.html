@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Calculator</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        #exp {
+            width: 400px;
+            height: 70px;
+            font-size: 50px;
+            font-family: Arial, sans-serif;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        input[type=button] {
+            width: 60px;
+            height: 60px;
+            border: lightgrey solid 1px;
+            background-color: white;
+            color: #555555;
+            border-radius: 50%;
+            margin: 10px;
+            outline: 0;
+            transition: border, background-color 150ms;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        input[type=button]:active {
+            border: lightgrey;
+            background-color: lightgrey;
+            color: black;
+            outline: 0;
+        }
+
+        input[type=button].operator {
+            border: coral solid 1px;
+            background-color: white;
+            color: coral;
+            transition: border, background-color 200ms;
+        }
+        input[type=button].operator:active {
+            border: coral;
+            background-color: coral;
+            color: white;
+        }
+
+        form {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function calculate() {
+            let exp = document.getElementById("exp");
+            exp.value = eval(exp.value);
+        }
+
+        function del() {
+            let exp = document.getElementById("exp");
+            exp.value = "";
+        }
+
+        function val(num) {
+            let exp = document.getElementById("exp");
+            exp.value = exp.value + num;
+        }
+
+        function back() {
+            let exp = document.getElementById("exp");
+            exp.value = exp.value.substring(0, exp.value.length - 1);
+        }
+    </script>
+</head>
+<body>
+<h1>Calculator</h1>
+<form action="">
+    <input type="text" value="" id="exp"><br>
+    &emsp;<input type="button" value="⬅" onclick="back()">&emsp;
+    <input type="button" value="CE" onclick="del()">&emsp;
+    <input type="button" value="C" onclick="del()">&emsp;
+    <input type="button" value="=" onclick="calculate()" class="operator"><br>
+    &emsp;<input type="button" value="7" onclick="val('7')">&emsp;
+    <input type="button" value="8" onclick="val('8')">&emsp;
+    <input type="button" value="9" onclick="val('9')">&emsp;
+    <input type="button" value="/" onclick="val('/')" class="operator"><br>
+    &emsp;<input type="button" value="4" onclick="val('4')">&emsp;
+    <input type="button" value="5" onclick="val('5')">&emsp;
+    <input type="button" value="6" onclick="val('6')">&emsp;
+    <input type="button" value="*" onclick="val('*')" class="operator"><br>
+    &emsp;<input type="button" value="1" onclick="val('1')">&emsp;
+    <input type="button" value="2" onclick="val('2')">&emsp;
+    <input type="button" value="3" onclick="val('3')">&emsp;
+    <input type="button" value="-" onclick="val('-')" class="operator"><br>
+    &emsp;<input type="button" value="0" onclick="val('0')">&emsp;
+    <input type="button" value="." style="visibility: visible" onclick="val('.')">&emsp;
+    <input type="button" value="NONE" style="visibility: hidden">&emsp;
+    <input type="button" value="+" onclick="val('+')" class="operator">
+</form>
+</body>
+</html>

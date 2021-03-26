@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function store() {
+            let name = document.getElementById("name").value;
+            let serial = document.getElementById("serial").value;
+            sessionStorage.setItem(name, serial);
+        }
+    </script>
+</head>
+<body>
+<h3>이름과 학번 입력</h3>
+<hr>
+<table>
+    <tr>
+        <td><label for="name">이름: </label><input type="text" id="name"></td>
+    </tr>
+    <tr>
+        <td><label for="serial">학번: </label><input type="text" id="serial"></td>
+        <td><input type="button" onclick="store()" value="스토리지에 저장"></td>
+    </tr>
+</table>
+<a href="20171721-*-12장-실습문제1-2.html">이름으로 학번 검색 페이지로</a>
+</body>
+</html>

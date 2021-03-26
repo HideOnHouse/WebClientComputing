@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How to cook fried noodle.</title>
+    <script>
+        function addInstruct(orderedList) {
+            let str = prompt("Please input next step to cook fried noodle.");
+            let newList = document.createElement("li");
+            newList.innerText = str;
+            orderedList.appendChild(newList);
+        }
+    </script>
+</head>
+<body>
+<h3>How to cook fired noodle</h3>
+<hr>
+<ol type="a" style="background-color: #00b903" onclick="addInstruct(this)">
+    <li>Boil water</li>
+</ol>
+
+</body>
+</html>

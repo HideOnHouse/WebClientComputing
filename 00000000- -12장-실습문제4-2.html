@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: lemonchiffon;
+        }
+    </style>
+</head>
+<body>
+<h3>포스트잇 출력</h3>
+<hr>
+<ol id="postit">
+
+</ol>
+<script>
+    let orderedList = document.getElementById("postit");
+
+    for (let i = 0; i < localStorage.length; i++) {
+        let childList = document.createElement("li");
+        let title = localStorage.key(i);
+        let content = localStorage.getItem(title);
+        childList.innerText = title + ": " + content;
+        orderedList.appendChild(childList);
+    }
+</script>
+</body>
+</html>

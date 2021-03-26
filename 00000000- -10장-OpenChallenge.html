@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div.snow {
+            position: absolute;
+            color: cyan;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <script>
+        let snows = new Array(30);
+        let snowsX = new Array(30);
+        let snowsY = new Array(30);
+        let snowsFallSpeed = new Array(30);
+        let wind = new Array(30);
+        let snowSize = new Array(30);
+        function fall() {
+            for (let i = 0; i < 30; i++) {
+                snowsX[i] += wind[i];
+                snowsY[i] += snowsFallSpeed[i];
+                if (snowsY[i] > window.innerHeight-90) {
+                    snowsX[i] = Math.floor(Math.random() * window.innerWidth);
+                    snowsY[i] = 0;
+                    snowsFallSpeed[i] = Math.random() * 2 + 2;
+                }
+                if (snowsX[i] > window.innerWidth - 30) {
+                    snowsX[i] = 30;
+                } else if (snowsX[i] < 30) {
+                    snowsX[i] = window.innerWidth - 30;
+                }
+                snows[i].style.left = snowsX[i] + "px";
+                snows[i].style.top = snowsY[i] + "px";
+            }
+            setTimeout("fall()", 17);
+        }
+    </script>
+</head>
+<body onload="fall()">
+<script>
+    function init() {
+        for (let i = 0; i < 30; i++) {
+            snowsX[i] = Math.floor(Math.random() * window.innerWidth);
+            snowsY[i] = Math.floor(Math.random() * window.innerHeight);
+            snowsFallSpeed[i] = Math.random() * 2 + 2;
+            wind[i] = 1 + Math.random();
+            snowSize[i] = 20 + Math.random() * 10;
+            let snow = "<div class='snow' id=snow" + i + " style='top:" + screenX[i] + "px; left: " + snowsY[i] + "px; font-size:" + snowSize[i] + "px;'>❄</div>";
+            document.write(snow);
+
+            snows[i] = document.getElementById("snow" + i);
+        }
+    }
+
+    init();
+</script>
+
+</body>
+</html>

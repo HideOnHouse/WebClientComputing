@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div {
+            display: inline-block;
+            border: 5px solid black;
+            width: 500px;
+            height: 20%;
+            font-weight: bolder;
+            font-size: 70px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <script>
+        let pauseFlag = false;
+
+        function pause() {
+            pauseFlag = pauseFlag !== true;
+            let divClock = document.getElementById("clock");
+            if (pauseFlag) {
+                divClock.style.color = "red";
+            } else {
+                divClock.style.color = "black";
+            }
+        }
+
+        function clock() {
+            window.setInterval(refreshClock, 100);
+        }
+
+        function refreshClock() {
+            let divClock = document.getElementById("clock");
+            if (pauseFlag !== true) {
+                let currentDate = new Date();
+                divClock.innerText = currentDate.getHours() + " : " + currentDate.getMinutes() + " : " + currentDate.getSeconds();
+            }
+        }
+    </script>
+</head>
+<body onload="clock(); refreshClock()">
+<h3>Make clock in div tag</h3>
+your click will stop clock.
+<hr>
+<div id="clock" onclick="pause()"></div>
+</body>
+</html>

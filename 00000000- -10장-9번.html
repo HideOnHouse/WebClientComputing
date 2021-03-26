@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Screen Resolution</title>
+    <script>
+        function isBig() {
+            let width = screen.width;
+            let height = screen.height;
+            if (width < 1280 || height < 1024) {
+                alert("Poor screen resolution!")
+            }
+        }
+    </script>
+</head>
+<body onload="isBig()">
+<h3>Use screen object</h3>
+<hr>
+If screen resolution is smaller than 1280x1024, this page might not work properly.
+</body>
+</html>

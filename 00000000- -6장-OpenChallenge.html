@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>별 문자 출력하기</title>
+</head>
+<body>
+<h3>별 문자 출력하기</h3>
+<hr>
+<script>
+    function printStar(n) {
+        for (let i = 1; i < n + 1; i++) {
+            for (let j = 0; j < i; j++) {
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+    }
+    let n = parseInt(prompt("양의 정수를 입력하세요"))
+    if (!isNaN(n) && n >= 0) {
+        printStar(n)
+    } else {
+        document.write("입력 오류 입니다.")
+    }
+</script>
+</body>
+</html>

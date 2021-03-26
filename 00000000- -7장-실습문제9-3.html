@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>book 객체 만들기</title>
+</head>
+<body>
+<h3>book 객체 만들기</h3>
+<hr>
+<script>
+    function Book() {
+        this.title = "HTML5";
+        this.author = "황기태";
+        this.price = 20000;
+
+        this.buy = function () {
+            document.write(this.title + "을 구매하셨습니다.<br>");
+        }
+
+        this.sell = function () {
+            document.write(this.title + "을 " + this.price + "원에 판매하셨습니다.<br>");
+        }
+
+        this.read = function () {
+            document.write(this.title + "을 읽었습니다.<br>")
+        }
+    }
+
+    let book = new Book();
+    document.write("book : " + book.title + ", " + book.author + ", " + book.price + "<br>");
+    book.buy();
+    book.sell();
+    book.read();
+</script>
+</body>
+</html>

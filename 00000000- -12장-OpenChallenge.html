@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>단어장 만들기</title>
+    <script>
+        function store() {
+            let item = localStorage.getItem(korean);
+            if (item != null) {
+                if (confirm(english + "가 이미 있습니다. 수정하시겠습니까?")) {
+                    let korean = document.getElementById("korean").value;
+                    let english = document.getElementById("english").value;
+                    localStorage.setItem(korean, english);
+                }
+            } else {
+                let korean = document.getElementById("korean").value;
+                let english = document.getElementById("english").value;
+                localStorage.setItem(korean, english);
+            }
+        }
+
+        function find() {
+            let korean = document.getElementById("korean").value;
+            document.getElementById("english").value = localStorage.getItem(korean)
+        }
+
+        function del() {
+            let korean = document.getElementById("korean").value;
+            localStorage.removeItem(korean);
+        }
+
+        function show() {
+            let diction = window.open("20171721-*-12장-OpenChallenge-2.html")
+        }
+    </script>
+</head>
+<body>
+<h3>나의 단어장 만들기</h3>
+<hr>
+<table>
+    <tr>
+        <td><label for="english">영어 </label><input type="text" id="english"></td>
+    </tr>
+    <tr>
+        <td><label for="korean">한글 </label><input type="text" id="korean"></td>
+    </tr>
+</table>
+<input type="button" value="단어 저장" onclick="store()">
+<input type="button" value="영단어 검색" onclick="find()">
+<input type="button" value="단어 삭제" onclick="del()">
+<input type="button" value="전체 보기" onclick="show()">
+</body>
+</html>

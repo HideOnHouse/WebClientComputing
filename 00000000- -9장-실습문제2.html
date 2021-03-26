@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Radio button and display image</title>
+    <script>
+        function displayImage(i) {
+            let display = document.getElementById("display");
+            display.src = i.value;
+        }
+
+    </script>
+</head>
+<body>
+<h3>Display image when click radio button</h3>
+<hr>
+<form>
+    <input type="radio" value="apple.jpg" name="fruit" onclick="displayImage(this)">Apple
+    <input type="radio" value="banana.jpg" name="fruit" onclick="displayImage(this)">Banana
+    <input type="radio" value="mango.jpg" name="fruit" onclick="displayImage(this)">Mango
+    <img src="banana.jpg" alt="" id="display" width="300" height="300">
+</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script>
+        function calculate() {
+            let userExp = document.getElementById("exp");
+            let ans = document.getElementById("answer");
+            ans.value = eval(userExp.value);
+
+        }
+    </script>
+</head>
+<body>
+<h3>Make Calculator</h3>
+<hr>
+<p>
+    input expression you want to calculate then press Calculator.<br>
+    the answer will show on value
+</p>
+<form action="">
+    Formula <input type="text" id="exp" value="" width="100"><br>
+    Answer &nbsp&nbsp;<input type="text" id="answer" width="100">
+    <input type="button" value=" Calculate " onclick="calculate()">
+</form>
+</body>
+</html>

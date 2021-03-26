@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>단어장 만들기</title>
+    <style>
+        td, th {
+            text-align: center;
+            font-size: larger;
+            border-bottom: 1px solid black;
+        }
+
+        table {
+            text-align: center;
+            margin: auto;
+        }
+
+        body {
+            background-color: lemonchiffon;
+        }
+    </style>
+</head>
+<body style="text-align: center">
+<h3>나의 단어장 모두 출력</h3>
+<hr>
+<script>
+
+    document.write("<table>");
+    for (let i = 0; i < localStorage.length; i++) {
+        let korean = localStorage.key(i);
+        let english = localStorage.getItem(korean);
+        document.write("<tr>");
+        document.write("<td>" + (i + 1) + "</td>");
+        document.write("<th>" + english + "</th>");
+        document.write("<td>" + korean + "</td>");
+        document.write("</tr>");
+    }
+    document.write("</table>");
+</script>
+</body>
+
+</html>

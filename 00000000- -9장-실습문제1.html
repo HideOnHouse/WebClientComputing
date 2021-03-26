@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Focus and Onblur, Onfocus</title>
+    <script>
+        function changeColor(focus) {
+            if (focus){
+                document.body.style.backgroundColor = "white";
+
+            } else
+                document.body.style.backgroundColor = "lightgray";
+        }
+    </script>
+</head>
+<body onblur="changeColor(false)" onfocus="changeColor(true)">
+<h3>Focus and Onblur, Onfocus</h3>
+<hr>
+<p>
+    Blur event occur when click the outside of browser and focus event occur when you click browser.<br>
+    white == Focus,  LightGray == Blur
+</p>
+</body>
+</html>

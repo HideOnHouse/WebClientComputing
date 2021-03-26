@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function store() {
+            let title = document.getElementById("title").value;
+            let content = document.getElementById("content").value;
+            localStorage.setItem(title, content);
+        }
+
+        function show() {
+            let win = window.open("20171721-*-12장-실습문제3-2.html", "show");
+        }
+    </script>
+</head>
+<body>
+<h3>포스트잇</h3>
+<hr>
+제목
+<input type="text" id="title">
+<br>
+메모입력
+<br>
+<textarea id="content" cols="30" rows="10"></textarea>
+<br>
+<input type="button" value="저장" onclick="store()">
+<input type="button" value="보기" onclick="show()">
+</body>
+</html>

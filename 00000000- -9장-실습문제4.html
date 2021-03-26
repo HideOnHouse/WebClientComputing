@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Onmousemove</title>
+</head>
+<body>
+<h3>Make image cursor</h3>
+<hr>
+Image will follow your mouse cursor.
+<div id="div" style="position: absolute">
+    <img src="bonobono.jpg" alt="" width="20" height="20">
+</div>
+<br>
+<strong>
+    script 태그가 head태그 내부에 있을 때에는 왜 동작을 안하는지 잘 모르겠습니다 ㅠㅠ
+</strong>
+</body>
+<script>
+    let div = document.getElementById("div");
+    document.onmousemove = function (ev) {
+        div.style.left = ev.clientX - 7 + "px";
+        div.style.top = ev.clientY - 5 + "px";
+    };
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>문자열 배열 다루기</title>
+</head>
+<body>
+<h3>문자열 배열 다루기</h3>
+<hr>
+<script>
+    function printArray(arr) {
+        let res = "";
+        for (let i = 0; i < arr.length; ++i) {
+            res += arr[i] + " ";
+        }
+        return res;
+    }
+
+    let names = ["wonsun", "jaemoonlee", "kitae", "gracehwang"];
+
+    document.write("이름 : ");
+    document.write(printArray(names) + "<br>")
+
+    let longest = names[0];
+
+    for (let i = 1; i < names.length; i++) {
+        if (names[i].length > longest.length)
+            longest = names[i];
+    }
+
+    document.write("가장 긴 이름 : " + longest + "<br>");
+    names.sort();
+    let first = names[0];
+    document.write("가장 먼저 나오는 이름 : " + first + "<br>");
+    document.write("증가순 이름 : ");
+    document.write(printArray(names));
+
+</script>
+</body>
+</html>

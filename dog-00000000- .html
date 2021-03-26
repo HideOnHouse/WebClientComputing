@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>숨어있는 강아지 찾기</title>
+</head>
+<body>
+<h1>숨어있는 강아지 찾기</h1>
+<hr>
+
+<!--메뉴 부분입니다-->
+<table id="scoreboard">
+    <tr><td id="startGame" onclick="start_game()">게임 시작</td></tr>
+    <tr><td>남은 수 : <span id="remainDog">0</span></td></tr>
+    <tr><td>실패 수 : <span id="currentFail">0</span></td></tr>
+    <tr><td>남은 시간 : <span id="remainTime">0</span></td></tr>
+    <tr><td id="currentStatus">게임이 진행될 예정입니다.</td></tr>
+</table>
+
+<!--게임에 필요한 강아지표를 만드는 부분입니다, 일일히 타이밍하는것은 불가능해보여서 script를 이용했습니다-->
+<table id="game">
+    <script>
+        for (let i = 0; i < 3; i++) {
+            document.write("<tr>")
+            for (let j = 0; j < 8; j++) {
+                document.write("<td id=" + i + j + " class='noDog'></td>")
+            }
+            document.write("</tr>")
+        }
+    </script>
+</table>
+
+<!--게임이 오버되었을때 화면에 표시하기 위한 부분입니다-->
+<div id="gameOver">GAME OVER</div>
+
+<!--오디오 출력을 위한 부분입니다-->
+<audio src="media/korea.mp3" id="bgm" loop autoplay ></audio>
+<audio src="media/recycle.mp3" id="startAlert"></audio>
+<audio src="media/bad.mp3" id="wrong"></audio>
+<audio src="media/bi.mp3" id="fail"></audio>
+<audio src="media/chimes.mp3" id="right"></audio>
+<audio src="media/clock.mp3" id="clock"></audio>
+<audio src="media/tada.mp3" id="win"></audio>
+
+</body>
+
+<!--자바스크립트, CSS를 로드하는 부분입니다.-->
+<link rel="stylesheet" type="text/css" href="dog-20171721-*.css" />
+<script src="src/jquery-3.5.1.js"></script>
+<script src="dog-20171721-*.js"></script>
+</html>

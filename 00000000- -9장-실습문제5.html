@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" ondblclick="changeColor()">
+<head>
+    <meta charset="UTF-8">
+    <title>Double click anywhere</title>
+    <script>
+        function changeColor() {
+            document.body.style.backgroundColor = "#" + Math.round(Math.random() * 0xffffff).toString(16);
+
+        }
+    </script>
+</head>
+<body>
+<h3>Double click anywhere</h3>
+<hr>
+<p>
+    Background color will randomly change if you <strong>double click</strong> anywhere.
+</p>
+</body>
+</html>

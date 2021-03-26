@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onmouseover, onmouseout</title>
+    <script>
+        function showDetail(ev) {
+            let detail = document.getElementById("detail");
+            detail.style.background = "wheat";
+            detail.style.left = ev.clientX + "px";
+            detail.style.top = ev.clientY + "px";
+            detail.style.visibility = "visible";
+            detail.style.width = "auto";
+            detail.style.height = "auto";
+            if (ev.target.id === "python") {
+                detail.innerText = "easy, simple, slow";
+            } else if (ev.target.id === "java") {
+                detail.innerText = "most neat but little shitty word I think";
+            } else if (ev.target.id === "cpp") {
+                detail.innerText = "looks so weird";
+            } else {
+                detail.innerText = "let it c. Fast";
+            }
+        }
+
+        function hideDetail() {
+            document.getElementById("detail").style.visibility = "hidden";
+        }
+    </script>
+</head>
+<body>
+<h3>Locate mouse to lise to see detail</h3>
+<hr>
+Programming Language
+<br>
+<ul>
+    <li id="python">Python</li>
+    <li id="java">Java</li>
+    <li id="cpp">C++</li>
+    <li id="c">C</li>
+    <script>
+        let list = document.getElementsByTagName("LI");
+        for (let listElement of list) {
+            listElement.addEventListener("mouseover", showDetail, true);
+            listElement.addEventListener("mouseout", hideDetail, true);
+        }
+    </script>
+</ul>
+<div id="detail" style="position: absolute"></div>
+</body>
+</html>
